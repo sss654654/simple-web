@@ -1,11 +1,9 @@
 version: 0.0
 os: linux
-
 files:
   - source: /
     destination: /usr/share/nginx/html/
     overwrite: true
-
 permissions:
   - object: /usr/share/nginx/html
     pattern: "**"
@@ -21,7 +19,6 @@ permissions:
     mode: 644
     type:
       - file
-
 hooks:
   BeforeInstall:
     - location: scripts/before_install.sh
