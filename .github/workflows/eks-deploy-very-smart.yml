@@ -53,7 +53,7 @@ jobs:
           ls -la
           # 현재 파일 내용 확인
           cat simple-web-deploy.yml
-          sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web.*|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web:${{ env.DOCKER_TAG }}|g" xinfra/aws-eks/simple-web-deploy.yml
+          sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web.*|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web:${{ env.DOCKER_TAG }}|g" simple-web-deploy.yml
           # 변경된 내용 확인
           cat simple-web-deploy.yml
 
