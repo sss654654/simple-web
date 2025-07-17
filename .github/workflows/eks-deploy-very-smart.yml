@@ -40,7 +40,7 @@ jobs:
       - name: 10.서비스 리포지토리 체크아웃
         uses: actions/checkout@v4
         with:
-          repository: sss654654/simple-web
+          repository: sss654654/simple-web-platform
           ref: main
           path: .
           token: ${{ secrets.PAT }}
@@ -52,10 +52,10 @@ jobs:
           # 파일이 존재하는지 확인
           ls -la
           # 현재 파일 내용 확인
-          cat xinfra/aws-eks/simple-web-deploy.yml
+          cat simple-web-deploy.yml
           sed -i "s|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web.*|image: ${{ secrets.DOCKER_USERNAME }}\/simple-web:${{ env.DOCKER_TAG }}|g" xinfra/aws-eks/simple-web-deploy.yml
           # 변경된 내용 확인
-          cat xinfra/aws-eks/simple-web-deploy.yml
+          cat simple-web-deploy.yml
 
       # 변경사항 커밋 및 푸시
       - name: 12.서비스 리포지토리 변경사항 커밋 및 푸시
@@ -63,6 +63,6 @@ jobs:
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git commit -am "Update image tag to ${{ env.DOCKER_TAG }}"
-          git remote set-url origin https://${{ secrets.PAT }}@github.com/${{ secrets.DOCKER_USERNAME }}/simple-web.git
+          git remote set-url origin https://${{ secrets.PAT }}@github.com/${{ secrets.DOCKER_USERNAME }}/simple-web-platform.git
 
           git push origin main
