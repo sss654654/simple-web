@@ -1,6 +1,5 @@
-## ec2 s3 deploy12
-## ec2-deploy-smart.yml
-name: Deploy to AWS
+## .github/workflows/ec2-deploy-smart.yml
+name: AWS EC2-Deploy with Smart
 on:
   push:
     branches: [main]
