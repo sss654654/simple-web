@@ -40,7 +40,7 @@ jobs:
       - name: 10.서비스 리포지토리 체크아웃
         uses: actions/checkout@v4
         with:
-          repository: sss654654/simple-service
+          repository: dangtong-s-inc/simple-service
           ref: main
           path: .
           token: ${{ secrets.PAT }}
